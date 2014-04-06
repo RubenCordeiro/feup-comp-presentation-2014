@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>ANTLR4 - Overview</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-markdown>
+                    # ANTLR 4
+                    ### A (rather simple) Overview
+                    Compilers
+                    
+                    Faculdade de Engenharia da Universidade do Porto
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        ## Outline
+                    </section>
+                    
+                    <section data-markdown>
+                        * Introduction to parsing with ANTLR 4
+                        * Implementing Parsers
+                        * Building Language Applications Using Parse Trees
+                        * Parse-Tree Listeners and Visitors
+                        * Use case: simple calculator
+                    </section>
+                </section>
+                
+                <section>
+                    <section data-markdown>
+                        ## What's ANTLR 4?
+                    </section>
+                    <section data-markdown>
+                        ## What's ANTLR 4?
+                        **ANTLR 4** is a parser generator, generating parse trees automatically from a given **grammar**.
+                        
+                        It's a **parser generator** and a **language tool**.
+                    </section>
+                    <section data-markdown>
+                        ## Design Goals
+                        * Ease-of-use over performance
+                        * Simplicity over complexity
+                    </section>
+                    <section data-markdown>
+                        ## Industry adoption
+                        
+                        * **Twitter** search uses ANTLR for query parsing.
+                        * **Oracle** uses ANTLR within the SQL Developer IDE.
+                        * The **NetBeans** IDE parses C++ with ANTLR.
+                    </section>
+                </section>
+                
+                <section>
+                    <section data-markdown>
+                        ## What does parsing with ANTLR4 mean?
+                    </section>
+                    <section data-markdown>
+                        ###  What does parsing with ANTLR4 mean?
+                        
+                        * Structure is described as a **grammar**.
+                        * Recognizer is divided into **lexer** and **parser**.
+                        * **Parse tree** can be auto generated.
+                        
+                        <!-- ![An image was supposed to be here..](parseMeaning.png) -->
+                    </section>
+                    <section data-markdown>
+                        ###  What does parsing with ANTLR4 mean?
+                        ![An image was supposed to be here..](images/parseMeaning.png)
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
