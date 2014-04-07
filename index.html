@@ -74,7 +74,6 @@
                         * The **NetBeans** IDE parses C++ with ANTLR.
                     </section>
                 </section>
-                
                 <section>
                     <section data-markdown>
                         ## What does parsing with ANTLR4 mean?
@@ -136,19 +135,6 @@
                     ```
                     The ANTLR tool generates recursive-descent parsers from grammar rules such as the ones above.
                     </section>
-                    <section data-markdown>
-                        ## ANTLR4 data structures
-                        Lexers process characters and pass tokens to the parser, which in turn checks syntax and creates a parse tree.
-                        The corresponding ANTLR classes are *CharStream*, *Lexer*, *Token*, *Parser*, and *ParseTree*.
-                    </section>
-                    <section>
-                        <h2> ANTLR4 data structures </h2>
-                        <img src="images/dataStructures.png"></img>
-                        
-                        <aside class="notes">
-                            The “pipe” connecting the lexer and parser is called a *TokenStream*.
-                        </aside>
-                    </section>
                     <section>
                         <h2> Generated Parse Tree </h2>
                         <img src="images/parseTree.png"></img>
@@ -175,11 +161,6 @@
                     </section>
                     <section data-markdown>
                         ## Listeners
-                        To walk a tree and trigger calls into a listener, ANTLR’s runtime provides class *ParseTreeWalker*. 
-                        To make a language application, we build a *ParseTreeListener* with application-specific code.
-                    </section>
-                    <section data-markdown>
-                        ## Listeners
                         ![An image was supposed to be here..](images/listenerDepthWalking.png)
                         
                         Tree traversal.
@@ -189,11 +170,6 @@
                         ![An image was supposed to be here..](images/visitorCallSequence.png)
                         
                         *ParseTreeWalker* call sequence.
-                    </section>
-                    <section data-markdown>
-                        ## Visitors
-                        
-                        We make use of the *visitor* interface when we want to control the walk itself, explicitly calling methods to visit children.
                     </section>
                     <section data-markdown>
                         ## Visitors
