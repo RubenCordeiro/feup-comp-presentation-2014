@@ -45,24 +45,11 @@
                 <section data-markdown>
                     # ANTLR 4
                     ### A (rather simple) Overview
-                    Compilers
-                    
-                    Faculdade de Engenharia da Universidade do Porto
+                    By *Duarte Duarte*, *Luís Cleto*, *Miguel Marques* and *Ruben Cordeiro*
+
+                    COMP/MIEIC/FEUP - 2013/2014
                 </section>
 
-                <section>
-                    <section data-markdown>
-                        ## Outline
-                    </section>
-                    
-                    <section data-markdown>
-                        * Introduction to parsing with ANTLR 4
-                        * Implementing Parsers
-                        * Building Language Applications Using Parse Trees
-                        * Parse-Tree Listeners and Visitors
-                        * Use case: simple calculator
-                    </section>
-                </section>
                 
                 <section>
                     <section data-markdown>
@@ -108,10 +95,10 @@
                 </section>
                 <section>
                     <section data-markdown>
-                        ## Specify a grammar
+                        ## Grammar specification
                     </section>
                     <section data-markdown>
-                    ## Specify a grammar
+                    ## Grammar specification
                     ``` javascript
                         grammar assignment;
     
@@ -193,14 +180,67 @@
                         ![An image was supposed to be here..](images/visitorCallSequence2.png)
                     </section>
                 </section>
+                <section data-markdown>
+                    ## ANTL4 ALL(*)
+                    * Generates recursive descent parser 
+                        * like what you would build by hand
+                    * Does dynamic grammar analysis while parsing
+                        * saves results like a JIT does     
+                    * Allows for direct left recursion
+                        * indirect left recursion not supported
+                    * Parsing time typically near-linear
+
+                </section>
                 <section>
                     <section data-markdown>
                         ## Practical Example
                         ### Building a Calculator Using a Visitor
                     </section>
-                    <section data-markdown>
-                        ## Practical Example
+                    <section>
+                        <h2> Practical Example </h2>
+                        <ul>
+                            <li><a href="calcGrammar.html" target="blank">Grammar</a></li>
+                            <li><a href="evalVisitor.html" target="blank">Visitor Implementation</a></li>
+                            <li><a href="" target="blank"></a> </li>
+                        </ul>
                     </section>
+                    <section>
+                        <h2> Pratical Example </h2>
+                        We built a calculator without having to insert raw <i>Java</i> actions into the grammar.
+                        
+                        The grammar is kept application independent and programming language neutral.
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                       ## Summary 
+                    </section>
+                    <section data-markdown>
+                        ## Summary
+                        ANTLR4 is:
+                        
+                        * Modular: the supplied tree-walking mechanisms decouple the grammar implementation from application-specific code and design. All generated parsers are reusable from the start.
+                        * Powerful: Eats all context free grammars (with no indirect recursion).
+                    </section>
+                    <section data-markdown>
+                        ## Summary
+                        ANTLR4's release codename is *Honey Badger*.
+                        
+                        It was named after the extremely resilient animal since ANTLR4 takes whatever you give it: it just doesn't give a damn!
+                    </section>
+                    <section data-markdown>
+                        ## Summary
+                        ![An image was supposed to be here..](images/honeyBadger.jpg)
+                        
+                    </section>
+                </section>
+                <section data-markdown>
+                    ## References
+                    
+                    * ANTLR4-Website
+                        * http://www.antlr.org
+                    * Book (it's actually worth reading)
+                        * http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference
                 </section>
             </div>
 
