@@ -93,6 +93,26 @@
                         ![An image was supposed to be here..](images/parseMeaning.png)
                     </section>
                 </section>
+				<section>
+					<section data-markdown>
+						## ANTLR4 ALL(*)
+					</section>
+					<section data-markdown>
+						## ANTLR4 ALL(*)
+						* Generates recursive descent parser 
+							* like what you would build by hand
+						* Does dynamic grammar analysis while parsing
+							* saves results like a JIT does     
+						* Allows for direct left recursion
+							* indirect left recursion not supported
+						* Parsing time typically near-linear
+	
+					</section>
+					<section data-markdown>
+						## ANTLR4 ALL(*)
+						 By  moving grammar analysis to parse-time, it's possible to avoid the common pitfalls of ambiguity and left-recursion.
+					</section>
+				</section>
                 <section>
                     <section data-markdown>
                         ## Grammar specification
@@ -180,17 +200,6 @@
                         ![An image was supposed to be here..](images/visitorCallSequence2.png)
                     </section>
                 </section>
-                <section data-markdown>
-                    ## ANTL4 ALL(*)
-                    * Generates recursive descent parser 
-                        * like what you would build by hand
-                    * Does dynamic grammar analysis while parsing
-                        * saves results like a JIT does     
-                    * Allows for direct left recursion
-                        * indirect left recursion not supported
-                    * Parsing time typically near-linear
-
-                </section>
                 <section>
                     <section data-markdown>
                         ## Practical Example
@@ -242,6 +251,9 @@
                     * Book (it's actually worth reading)
                         * http://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference
                 </section>
+				<section data-markdown>
+					## Questions?
+				</section>
             </div>
 
         </div>
