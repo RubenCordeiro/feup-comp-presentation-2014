@@ -106,6 +106,102 @@
                         ![An image was supposed to be here..](images/parseMeaning.png)
                     </section>
                 </section>
+                <section>
+                    <section data-markdown>
+                        ## Specify a grammar
+                    </section>
+                    <section data-markdown>
+                    ## Specify a grammar
+                    ``` javascript
+                        grammar assignment;
+    
+                        stat: ID '=' expr ';' // match an assignment; can match "f();"
+                        | ID '=' expr ';' // oops! an exact duplicate of previous alternative
+                        | expr ';' // expression statement
+                        ;
+                        
+                        expr: ID '(' ')'
+                        | INT 
+                        ;
+                        
+                        ID : [a-z]+ ;   // match one or more of any lowercase letter
+                        INT : [0-9]+ ; // match integers
+                    ```
+                    The ANTLR tool generates recursive-descent parsers from grammar rules such as the ones above.
+                    </section>
+                    <section data-markdown>
+                        ## ANTLR4 data structures
+                        Lexers process characters and pass tokens to the parser, which in turn checks syntax and creates a parse tree.
+                        The corresponding ANTLR classes are *CharStream*, *Lexer*, *Token*, *Parser*, and *ParseTree*.
+                    </section>
+                    <section>
+                        <h2> ANTLR4 data structures </h2>
+                        <img src="images/dataStructures.png"></img>
+                        
+                        <aside class="notes">
+                            The “pipe” connecting the lexer and parser is called a *TokenStream*.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2> Generated Parse Tree </h2>
+                        <img src="images/parseTree.png"></img>
+                        
+                        <aside class="notes">
+                            These are called context objects because they record everything we know about the recognition of a phrase by a rule. Each context object knows the
+                            start and stop tokens for the recognized phrase and provides access to all of
+                            the elements of that phrase. For example, AssignContext provides methods ID()
+                            and expr() to access the identifier node and expression subtree.
+                        </aside>
+                    </section>
+                    <section>
+                        <h3> Parse-Tree Listeners and Visitors </h3>
+                        Given this concrete structure, we can use the tree-walking mechanisms that ANTLR generates automatically, rather than writing the same tree-walking boilerplate code for each application.
+                        
+                    </section>
+                    <section data-markdown>
+                        ## Parse-Tree Listeners and Visitors
+                        
+                        Options for separation of actions from grammars in ANTLR4:
+                        
+                        * Listeners (SAX style)
+                        * Visitors (DOM style)
+                    </section>
+                    <section data-markdown>
+                        ## Listeners
+                        To walk a tree and trigger calls into a listener, ANTLR’s runtime provides class *ParseTreeWalker*. 
+                        To make a language application, we build a *ParseTreeListener* with application-specific code.
+                    </section>
+                    <section data-markdown>
+                        ## Listeners
+                        ![An image was supposed to be here..](images/listenerDepthWalking.png)
+                        
+                        Tree traversal.
+                    </section>
+                    <section data-markdown>
+                        ## Listeners
+                        ![An image was supposed to be here..](images/visitorCallSequence.png)
+                        
+                        *ParseTreeWalker* call sequence.
+                    </section>
+                    <section data-markdown>
+                        ## Visitors
+                        
+                        We make use of the *visitor* interface when we want to control the walk itself, explicitly calling methods to visit children.
+                    </section>
+                    <section data-markdown>
+                        ## Visitors
+                        ![An image was supposed to be here..](images/visitorCallSequence2.png)
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        ## Practical Example
+                        ### Building a Calculator Using a Visitor
+                    </section>
+                    <section data-markdown>
+                        ## Practical Example
+                    </section>
+                </section>
             </div>
 
         </div>
